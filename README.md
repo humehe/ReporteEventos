@@ -4,9 +4,10 @@ sin necesidad de copiar uno a uno los valores individuales por alumno.
 
 Para ello es necesario generar tres informe independientes de eventos, es decir uno para chat, otro para foro y uno más para tareas, con 
 totales por usuario. También es necesario tener el listado del número total de participantes por grupo en un archivo individual. 
-Todos los archivos deben estar en formato .csv y se debe tener cuidado al momento de descargar los informes de la plataforma, pues en 
-ocasiones la última linea está incompleta, faltando el total de eventos e incluso parte del nombre del último maestro, además de comentar 
-el encabezado de los archivos (añadir #).
+Todos los archivos deben estar en formato .csv (comma-separated values, valores separados por comas), deben tener tres columnas (ID 
+usuario,Nombre,Total)  y se debe tener cuidado al momento de descargar los informes de la plataforma, pues en ocasiones la última linea 
+está incompleta, faltando el total de eventos e incluso parte del nombre del último maestro(a), además de comentar 
+el encabezado de los archivos, es decir añadir # al encabezado: (#ID usuario,Nombre,Total).
 
 Sólo hay que indicar la localización en su computadora de los archivos, modificando la linea: 
 
