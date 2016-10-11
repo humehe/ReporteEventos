@@ -5,21 +5,21 @@ import numpy as np
 import shutil
 from os.path import expanduser
 
-
 os.system('clear')
-home = expanduser("~") + '/Dropbox/Curso-SEP-16/Reportes/'
 
 user = 'Hugo'
 
-#Table Names
-MSTR_TBL    = home + user + '/' + 'Informe-Reporte_Inicial_Visitas-PLA_241-MASTER.dat'#'Informe-Reporte_Inicial_Visitas-EXP_241-MASTER.csv'
-TBL_EVN_FRM = home + user + '/' + 'Informe-Reporte_Incial_Evento_Foro-PLA_241.csv'#'Informe-Reporte_Inicial_Eventos_Foros-EXP_241.csv'
-TBL_EVN_HWK = home + user + '/' + 'Informe-Reporte_Incial_Evento_Tareas-PLA_241.csv'#'Informe-Reporte_Inicial_Eventos_Tareas-EXP_241.csv'
-TBL_EVN_CHT = home + user + '/' + 'Informe-Reporte_Incial_Evento_Chat-PLA_241.csv'#'Informe-Reporte_Inicial_Eventos_Chat-EXP_241.csv'
-#TBL_VST     = home + user + '/' + 'Informe-Reporte_Inicial_Visitas-EXP_241.csv'
-#TBL_NO_VST  = home + user + '/' + 'Informe-Reporte_Inicial_No_Visitas-EXP_241.csv'
+home = expanduser("~") + '/Dropbox/Curso-SEP-16/Reportes/' + user + '/'
 
-op_tbl_B    = home + user + '/' + 'Informe-Reporte_Eventos-PLA_241.dat'
+#Table Names
+MSTR_TBL    = home + 'Informe-Reporte_Inicial_Visitas-PLA_241-MASTER.dat'#'Informe-Reporte_Inicial_Visitas-EXP_241-MASTER.csv'
+TBL_EVN_FRM = home + 'Informe-Reporte_Incial_Evento_Foro-PLA_241.csv'#'Informe-Reporte_Inicial_Eventos_Foros-EXP_241.csv'
+TBL_EVN_HWK = home + 'Informe-Reporte_Incial_Evento_Tareas-PLA_241.csv'#'Informe-Reporte_Inicial_Eventos_Tareas-EXP_241.csv'
+TBL_EVN_CHT = home + 'Informe-Reporte_Incial_Evento_Chat-PLA_241.csv'#'Informe-Reporte_Inicial_Eventos_Chat-EXP_241.csv'
+#TBL_VST     = home  + 'Informe-Reporte_Inicial_Visitas-EXP_241.csv'
+#TBL_NO_VST  = home  + 'Informe-Reporte_Inicial_No_Visitas-EXP_241.csv'
+
+op_tbl_B    = home  + 'Informe-Reporte_Eventos-PLA_241.dat'
 #Table Formats
 tbl_format_ipt    = 'ascii.csv'#'ascii.fixed_width_two_line'       #ascii,csv,fits,ascii.fixed_width_two_line
 tbl_format_opt    = 'ascii.tab'#.fixed_width_two_line'       #ascii,csv,fits,ascii.fixed_width_two_line
@@ -83,31 +83,22 @@ for student in range(len(id_master)):
 
 	if id_master[student] in id_forums:
 		indx=int(np.where(id_forums==id_master[student])[0])
-		#print 'It is',id_master[student],tot_forums[indx]
 		FRM.append(tot_forums[indx])
 	elif id_master[student] not in id_forums:
 		pass
 		FRM.append(0)
-		#print 'Not'
-
 	if id_master[student] in id_hworks:
 		indx=np.where(id_hworks==id_master[student])[0]
-		#print 'It is',id_master[student],tot_hworks[indx]
 		HWK.append(tot_hworks[indx])
 	elif id_master[student] not in id_hworks:
 		pass
 		HWK.append(0)
-		#print 'Not'
-
 	if id_master[student] in id_chat:
 		indx=int(np.where(id_chat==id_master[student])[0])
-		#print 'It is',id_master[student],tot_chat[indx]
 		CHT.append(tot_chat[indx])
 	elif id_master[student] not in id_chat:
 		pass
 		CHT.append(0)
-		#print 'Not'		
-
 
 rtB                = table.Table()
 rtB['ID']          = STD
